@@ -327,11 +327,16 @@ void fAlert():{}
 	 <Fmensaje>  <PAR_IZQ>  <COMILLA> <ID> <COMILLA>   <PAR_DER>
 }
 
+void funciones():{}
+{
+	Flower() FrandomList() FrandomTuple()  Fisdecimal() Frandom() FlistHTML()  Fpht()  FisChar()  FisDouble()  FisString()  FisBolean()  Fislist()
+	FisTuple() FisArray() FisStack()  FisTrue()  FisFalse()  Fsplit() Freplace() FisNum() FisAssci() FisDigit() fAlert()
+}
+
 void Inicio(): {}
 {
 	(
-		Flower() FrandomList() FrandomTuple() Fisdecimal() Frandom() FlistHTML() Fpht() FisChar() FisDouble() FisString() FisBolean() Fislist()
-		FisTuple() FisArray() FisStack() FisTrue() FisFalse() Fsplit() Freplace() FisNum() FisAssci() FisDigit() fAlert()
+		(funciones())+
 	)+<EOF>
 }
 
