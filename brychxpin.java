@@ -146,6 +146,104 @@ class brychxpin implements brychxpinConstants {
     jj_consume_token(DOS_PUNTOS);
 }
 
+  static final public void FisTuple() throws ParseException {
+    jj_consume_token(condicional);
+    jj_consume_token(Tdato);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(ID);
+    jj_consume_token(PAR_DER);
+    jj_consume_token(DOS_PUNTOS);
+}
+
+  static final public void FisArray() throws ParseException {
+    jj_consume_token(condicional);
+    jj_consume_token(EDD);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(ID);
+    jj_consume_token(PAR_DER);
+    jj_consume_token(DOS_PUNTOS);
+}
+
+  static final public void FisStack() throws ParseException {
+    jj_consume_token(condicional);
+    jj_consume_token(EDD);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(ID);
+    jj_consume_token(PAR_DER);
+    jj_consume_token(DOS_PUNTOS);
+}
+
+  static final public void FisTrue() throws ParseException {
+    jj_consume_token(condicional);
+    jj_consume_token(booleano);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(ID);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void FisFalse() throws ParseException {
+    jj_consume_token(condicional);
+    jj_consume_token(booleano);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(ID);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void Fsplit() throws ParseException {
+    jj_consume_token(ID);
+    jj_consume_token(PUNTO);
+    jj_consume_token(Fstring);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(ID);
+    jj_consume_token(COMA);
+    jj_consume_token(ID);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void Freplace() throws ParseException {
+    jj_consume_token(ID);
+    jj_consume_token(PUNTO);
+    jj_consume_token(Fstring);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(ID);
+    jj_consume_token(COMA);
+    jj_consume_token(ID);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void FisNum() throws ParseException {
+    jj_consume_token(ID);
+    jj_consume_token(ASIGANCION);
+    jj_consume_token(Fstring);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void FisAssci() throws ParseException {
+    jj_consume_token(ID);
+    jj_consume_token(ASIGANCION);
+    jj_consume_token(Fstring);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void FisDigit() throws ParseException {
+    jj_consume_token(ID);
+    jj_consume_token(ASIGANCION);
+    jj_consume_token(Fstring);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void fAlert() throws ParseException {
+    jj_consume_token(Fmensaje);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(COMILLA);
+    jj_consume_token(ID);
+    jj_consume_token(COMILLA);
+    jj_consume_token(PAR_DER);
+}
+
   static final public void Inicio() throws ParseException {
     label_1:
     while (true) {
@@ -161,6 +259,17 @@ class brychxpin implements brychxpinConstants {
       FisString();
       FisBolean();
       Fislist();
+      FisTuple();
+      FisArray();
+      FisStack();
+      FisTrue();
+      FisFalse();
+      Fsplit();
+      Freplace();
+      FisNum();
+      FisAssci();
+      FisDigit();
+      fAlert();
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case ID:{
         ;

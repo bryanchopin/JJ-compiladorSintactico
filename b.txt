@@ -10,3 +10,14 @@ id = isdouble()
 id = isString()
 id = isBolean()
 if list(id):
+if tuple(id):
+if Array(id):
+if stack(id):
+if true(id)
+if false(id)
+id.Split(id,id)
+id.replace(id,id)
+id = isnumeric()
+id = isascii()
+id = isdigit()
+Alert('hola')

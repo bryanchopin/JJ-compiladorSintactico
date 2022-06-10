@@ -269,10 +269,69 @@ void Fislist():{}
 	<condicional> <EDD> <PAR_IZQ> <ID> <PAR_DER> <DOS_PUNTOS>
 }
 
+void FisTuple():{}
+{
+	<condicional> <Tdato> <PAR_IZQ> <ID> <PAR_DER> <DOS_PUNTOS>
+}
+
+void FisArray():{}
+{
+	<condicional> <EDD> <PAR_IZQ> <ID> <PAR_DER> <DOS_PUNTOS>
+}
+
+void FisStack():{}
+{
+	<condicional> <EDD> <PAR_IZQ> <ID> <PAR_DER> <DOS_PUNTOS>
+}
+
+void FisTrue():{}
+{
+	<condicional>  <booleano>  <PAR_IZQ>  <ID>  <PAR_DER>
+}
+
+void FisFalse():{}
+{
+	<condicional>  <booleano>  <PAR_IZQ>  <ID>  <PAR_DER>
+}
+
+void Fsplit():{}
+{
+	<ID> <PUNTO>  <Fstring>  <PAR_IZQ> <ID><COMA> <ID> <PAR_DER>
+}
+
+
+
+
+void Freplace():{}
+{
+	<ID> <PUNTO> <Fstring> <PAR_IZQ> <ID><COMA> <ID>  <PAR_DER>
+}
+
+void FisNum():{}
+{
+	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
+}
+
+void FisAssci():{}
+{
+	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
+}
+
+void FisDigit():{}
+{
+	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
+}
+
+void fAlert():{}
+{
+	 <Fmensaje>  <PAR_IZQ>  <COMILLA> <ID> <COMILLA>   <PAR_DER>
+}
+
 void Inicio(): {}
 {
 	(
 		Flower() FrandomList() FrandomTuple() Fisdecimal() Frandom() FlistHTML() Fpht() FisChar() FisDouble() FisString() FisBolean() Fislist()
+		FisTuple() FisArray() FisStack() FisTrue() FisFalse() Fsplit() Freplace() FisNum() FisAssci() FisDigit() fAlert()
 	)+<EOF>
 }
 
