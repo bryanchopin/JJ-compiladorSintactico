@@ -85,7 +85,7 @@ TOKEN:
  }
  TOKEN:
  {
-  <Fstring: "Capitalize"| "casefold" | "center" | "count"| "encode" | "endswith" | "Expandtabs" | "find" | "format" | "format_map" | "index" | "ischar" |  "isdouble" |  "isalnum" | "Isalpha"| "isascii" | "isdecimal" | "isdigit" | "islower" | "isnumeric"| "Isprintable" | "isspace" | "istitle"| "issupper"| "join" | "lower" | "istrip"| "Maketrans" | "partition" | "replace" | "rindex" | "rjust"| "rsplit"| "rstrip" | "Split" | "upper" | "zfill"  >{}
+  <Fstring: "Capitalize"| "casefold" | "center" | "count"| "encode" | "endswith" | "Expandtabs" | "find" | "format" | "format_map" | "index" | "ischar" |  "isdouble" | "isString"| "isBolean"| "isalnum" | "Isalpha"| "isascii" | "isdecimal" | "isdigit" | "islower" | "isnumeric"| "Isprintable" | "isspace" | "istitle"| "issupper"| "join" | "lower" | "istrip"| "Maketrans" | "partition" | "replace" | "rindex" | "rjust"| "rsplit"| "rstrip" | "Split" | "upper" | "zfill"  >{}
  }
 TOKEN:
  {
@@ -93,7 +93,7 @@ TOKEN:
 }
 TOKEN:
  {
-  <Flineas: "Console.readkey" | "Console.readline" | "Consol e.writeline" | "Console.write" | "print" | "println" | "scan" | "scanf" | "input" >{}
+  <Flineas: "Console.readkey" | "Console.readline" | "Console.writeline" | "Console.write" | "print" | "println" | "scan" | "scanf" | "input" >{}
 }
 TOKEN:
  {
@@ -138,7 +138,7 @@ TOKEN:
 }
 TOKEN:
  {
-  <Tdato: "int" | "char" | "float" | "short" | "long" | "byte" | "double" | "sbyte" | " string" | "uint" | "ulong" | "integer" | "Boolean" | "const" | "enu m" | "dynamic" | "tuple" >{}
+  <Tdato: "int" | "char" | "float" | "short" | "long" | "byte" | "double" | "sbyte" | " string" | "uint" | "ulong" | "integer" | "Boolean" | "const" | "enum" | "dynamic" | "tuple" >{}
 }
 TOKEN:
  {
@@ -254,11 +254,25 @@ void FisDouble():{}
 	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
 }
 
+void FisString():{}
+{
+	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
+}
+
+void FisBolean():{}
+{
+	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
+}
+
+void Fislist():{}
+{
+	<condicional> <EDD> <PAR_IZQ> <ID> <PAR_DER> <DOS_PUNTOS>
+}
 
 void Inicio(): {}
 {
 	(
-		Flower() FrandomList() FrandomTuple() Fisdecimal() Frandom() FlistHTML() Fpht() FisChar() FisDouble()
+		Flower() FrandomList() FrandomTuple() Fisdecimal() Frandom() FlistHTML() Fpht() FisChar() FisDouble() FisString() FisBolean() Fislist()
 	)+<EOF>
 }
 

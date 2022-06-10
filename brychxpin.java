@@ -121,6 +121,31 @@ class brychxpin implements brychxpinConstants {
     jj_consume_token(PAR_DER);
 }
 
+  static final public void FisString() throws ParseException {
+    jj_consume_token(ID);
+    jj_consume_token(ASIGANCION);
+    jj_consume_token(Fstring);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void FisBolean() throws ParseException {
+    jj_consume_token(ID);
+    jj_consume_token(ASIGANCION);
+    jj_consume_token(Fstring);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(PAR_DER);
+}
+
+  static final public void Fislist() throws ParseException {
+    jj_consume_token(condicional);
+    jj_consume_token(EDD);
+    jj_consume_token(PAR_IZQ);
+    jj_consume_token(ID);
+    jj_consume_token(PAR_DER);
+    jj_consume_token(DOS_PUNTOS);
+}
+
   static final public void Inicio() throws ParseException {
     label_1:
     while (true) {
@@ -133,6 +158,9 @@ class brychxpin implements brychxpinConstants {
       Fpht();
       FisChar();
       FisDouble();
+      FisString();
+      FisBolean();
+      Fislist();
       switch ((jj_ntk==-1)?jj_ntk_f():jj_ntk) {
       case ID:{
         ;

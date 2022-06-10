@@ -7,3 +7,6 @@ id = list(<h1>)
 id = <h1>(list)
 id = ischar()
 id = isdouble()
+id = isString()
+id = isBolean()
+if list(id):
