@@ -1,0 +1,264 @@
+PARSER_BEGIN (brychxpin)
+import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+class brychxpin
+{
+	public static List <String> listaB = new ArrayList<String> ();
+	public static void Contador(String Campo)
+	{
+		int Ubicacion=brychxpin.listaB.indexOf(Campo);
+		if (Ubicacion==-1)
+		{
+			brychxpin.listaB.add(Campo);
+			Ubicacion=brychxpin.listaB.indexOf(Campo);
+			System.out.print(Ubicacion);
+		}
+		else
+		{
+			System.out.print(Ubicacion);
+		}
+	}
+	public static void main (String[]args)throws ParseException
+	{
+		try
+		{
+			brychxpin analizador = new brychxpin(System.in);
+			analizador.Inicio();
+			System.out.print("\n\t Compilado con exito brychxpin \n\n");
+		}
+		catch(ParseException e)
+		{
+			System.out.println(e.getMessage());
+			System.out.print("\n\t No Compilado brychxpin \n\n");
+		}
+	}
+}
+PARSER_END (brychxpin)
+
+TOKEN:
+ {
+  <Void:"Void" >{}
+}
+
+TOKEN:
+ {
+  <system:"System" >{}
+}
+TOKEN:
+ {
+  <random:"random" >{}
+}
+TOKEN:
+ {
+  <Nespacio:"namespace" >{}
+}
+TOKEN:
+ {
+  <caso:"case" >{}
+}
+TOKEN:
+ {
+  <cerrar:"Console.close" >{}
+}
+TOKEN:
+ {
+  <sobrecarga:"Override" >{}
+}
+TOKEN:
+ {
+  <interfaz:"interface" >{}
+}
+TOKEN:
+ {
+  <Pausar:"pause" >{}
+}
+
+
+TOKEN:
+ {
+  <Faritmetica:"Math.abs" |  "Math.exp" | "Math.log" | "Math.log10" | "Math.log1" | "Math.log2" | "Math.max" |  "Math.min" | "Math.random" |  "Math.sor" |  "Math.shuffle" | "Math.choice" | "Math.round" | "Math.sqrt" |  "Math.pow" | "Math.ceil" | "Math.floor" | "Math.cbrt" | "Math.exp" | "Math.sign" | "Math.randint" |  "Math.random.normal" |  "Math.random.binomial" | "Math.random.poisson" | "Math.random.uniform" | "Math.random.logistic" |  "Math.random.multinomial" | "Math.random.exponential" | "Math.random.chisquare" | "Math.random.rayleigh" | "Math.random.pareto" | "Math.lcm" |  "Math.gcd" | "Math.trunc" | "Math.fix" |  "Math.around" | "Math.hypot" | "Math.deg2rad" |  "Math.rad2de" |  "Math.quadratic" |  "Math.cubic" | "Math.squareArea" |  "Math.rectArea" | "Math.circleArea" |  "Math.triangleArea" | "Math.trapArea" |  "Math.regpolyArea" | "Math.bigmul" | "Math.BitDecrement" |  "Math.BitIncrement"| "Math.Clamp" | "Math.CopySing" | "Math.DivRem" |  "Math.MaxMagnitude" | "Math.MinMagnitude" | "Math.pi" | "Math.scale" | "Math.scaleB" | "Math.sign" >{}
+ }
+TOKEN:
+ {
+  <Ftrigonometrica: "Math.acos" | "Math.acosh" | "Math.asin" | "Math.atan" | "Math.atan2" | "Math.atanh" | "Math.cos" | "Math.cosh" | "Math.sin" | "Math.sinh" | "Math.tanh" >{System.out.println(" Ftrigonometrica ---------- "+image+" \n ");}
+ }
+ TOKEN:
+ {
+  <Fstring: "Capitalize"| "casefold" | "center" | "count"| "encode" | "endswith" | "Expandtabs" | "find" | "format" | "format_map" | "index" | "ischar" |  "isdouble" |  "isalnum" | "Isalpha"| "isascii" | "isdecimal" | "isdigit" | "islower" | "isnumeric"| "Isprintable" | "isspace" | "istitle"| "issupper"| "join" | "lower" | "istrip"| "Maketrans" | "partition" | "replace" | "rindex" | "rjust"| "rsplit"| "rstrip" | "Split" | "upper" | "zfill"  >{}
+ }
+TOKEN:
+ {
+  <Flambda:"lambda" >{}
+}
+TOKEN:
+ {
+  <Flineas: "Console.readkey" | "Console.readline" | "Consol e.writeline" | "Console.write" | "print" | "println" | "scan" | "scanf" | "input" >{}
+}
+TOKEN:
+ {
+  <Fmensaje: "Alert" |  " Message.Box" >{}
+}
+TOKEN:
+ {
+  <Flimpiar: "Console.Clear" | "cls" | "clear" >{}
+}
+
+TOKEN:
+ {
+  <Ologicos: "and" | "or" | "not" | "||" | "&&" >{}
+}
+TOKEN:
+ {
+  <Orelacionales: "<" | ">" | "<=" | ">=" | "==" | "!=" >{}
+}
+TOKEN:
+ {
+  <condicional: "switch" | "if" | "try" | "elif" >{}
+}
+TOKEN:
+ {
+  <defaults: "else" | "cath" | "otherwise" >{}
+}
+TOKEN:
+ {
+  <acceso: "private" | "static" | "protected" | "public" | "local" | "internal" >{}
+}
+TOKEN:
+ {
+  <booleano: "true" | "false" >{}
+}
+TOKEN:
+ {
+  <ciclos: "for" | "do" | "foreach" | "while" >{}
+}
+TOKEN:
+ {
+  <salto: "Goto" | "return" | "break" >{}
+}
+TOKEN:
+ {
+  <Tdato: "int" | "char" | "float" | "short" | "long" | "byte" | "double" | "sbyte" | " string" | "uint" | "ulong" | "integer" | "Boolean" | "const" | "enu m" | "dynamic" | "tuple" >{}
+}
+TOKEN:
+ {
+  <EDD: "Array" | "list" | "queue" | "stack" >{}
+}
+TOKEN:
+ {
+  <etiquetas: "<html>" | "</html>" | "<head>" | "</head>" | "<header>" | "</header>" | "<body>" | "</body>" | "<meta>" | "<div>" | "</div>" | "<section>" | "</section>" | "<article>" | "</article>" | "<image>" | "</image>" | "<script>" | "</script>" | "<p>" | "</p>" | "<h1>" | "</h1>" | "<h2>" | "</h2>" | "<h3>" | "</h3>" | "<title>" | "</title>" | "<style>" | "</style>" | "<nav>" | "</nav>" | "<main>" | "</main>" | "<footer>" | "</fooer>" | "<li>" | "</li>" | "<ul>" | "</ul>" | "<a>" | "</a>" | "<table>" | "<dt>" | "<th>" | "<figure>" | "<map>" | "<span>" | "<br>" >{}
+}
+TOKEN:
+ {
+  <dentro: "in">{}
+}
+TOKEN:
+ {
+  <thread: "Thread">{}
+}
+
+TOKEN:
+ {
+  <ASIGANCION: "=" >{}
+}
+TOKEN:
+ {
+  <alias: "as" >{}
+}
+
+
+
+TOKEN:
+{
+	 <PAR_IZQ:				"(">{}
+	|<PAR_DER:				")">{}
+	|<LLAVE_IZQ:			"{">{}
+	|<LLAVE_DER:			"}">{}
+	|<COR_IZQ:				"[">{}
+	|<COR_DER:				"]">{}
+	|<PUNTO:				".">{}
+	|<COMA:					",">{}
+	|<PUNTO_Y_COMA:			";">{}
+	|<DOS_PUNTOS:			":">{}
+	|<COMILLA:				"'">{}
+	|<COMILLA_DOBLE:		"\"">{}
+	|<ARROBA:				"@">{}
+	|<guionbajo:			"_">{}
+}
+
+TOKEN:
+{
+	<Omatematicos:		"*"|"+"|"-"|"/"|"^"|"%"> {}
+}
+
+TOKEN:
+{
+
+	<numero:				(["0"-"9"])>{}
+	|<ID:		(<letra>)(<letra_S>|<numero>)*(<guionbajo>)?>{}
+	|<letra_S:				(<letra>)+>{}
+	|<letra:				(["a"-"z","A"-"Z"])>{}
+}
+
+
+
+SKIP:
+{
+	" "|"\t"|"\r"|"\n"
+}
+
+
+
+void Flower():{}
+{
+	<ID><ASIGANCION><Fstring><PAR_IZQ><PAR_DER>
+}
+
+void FrandomList():{}
+{
+	<ID><ASIGANCION><random><PAR_IZQ><Tdato><COMA><numero><PAR_DER><PUNTO><EDD>
+}
+
+void FrandomTuple():{}
+{
+	<ID>  <ASIGANCION>  <random>  <PAR_IZQ> <Tdato><COMA><numero><PAR_DER><PUNTO> <Tdato>
+}
+
+void Fisdecimal():{}
+{
+	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
+}
+
+void Frandom():{}
+{
+	<ID>  <ASIGANCION>  <random>  <PAR_IZQ> <Tdato><COMA><numero><PAR_DER>
+}
+
+void FlistHTML():{}
+{
+	<ID>  <ASIGANCION> <EDD>  <PAR_IZQ> <etiquetas> <PAR_DER>
+}
+
+void Fpht():{}
+{
+	<ID>  <ASIGANCION> <etiquetas>  <PAR_IZQ> <EDD> <PAR_DER>
+}
+
+void FisChar():{}
+{
+	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
+}
+
+void FisDouble():{}
+{
+	<ID>  <ASIGANCION>  <Fstring>  <PAR_IZQ> <PAR_DER>
+}
+
+
+void Inicio(): {}
+{
+	(
+		Flower() FrandomList() FrandomTuple() Fisdecimal() Frandom() FlistHTML() Fpht() FisChar() FisDouble()
+	)+<EOF>
+}
+

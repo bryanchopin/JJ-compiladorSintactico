@@ -1,0 +1,9 @@
+id = lower()
+id = random(int,2).list
+id = random(int,2).tuple
+id = isdecimal()
+id = random(int,2)
+id = list(<h1>)
+id = <h1>(list)
+id = ischar()
+id = isdouble()
