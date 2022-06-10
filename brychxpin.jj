@@ -327,6 +327,11 @@ void fAlert():{}
 	 <Fmensaje>  <PAR_IZQ>  <COMILLA> <ID> <COMILLA>   <PAR_DER>
 }
 
+void metodo():{}
+{
+	 <ID>  <ASIGANCION> <Tdato>  <dentro> <salto>
+}
+
 void funciones():{}
 {
 	Flower() FrandomList() FrandomTuple()  Fisdecimal() Frandom() FlistHTML()  Fpht()  FisChar()  FisDouble()  FisString()  FisBolean()  Fislist()
@@ -336,7 +341,6 @@ void funciones():{}
 void Inicio(): {}
 {
 	(
-		(funciones())+
+		<LLAVE_IZQ>(funciones() (metodo())+)+ <LLAVE_DER>
 	)+<EOF>
 }
-

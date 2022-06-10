@@ -1,23 +1,29 @@
-id = lower()
-id = random(int,2).list
-id = random(int,2).tuple
-id = isdecimal()
-id = random(int,2)
-id = list(<h1>)
-id = <h1>(list)
-id = ischar()
-id = isdouble()
-id = isString()
-id = isBolean()
-if list(id):
-if tuple(id):
-if Array(id):
-if stack(id):
-if true(id)
-if false(id)
-id.Split(id,id)
-id.replace(id,id)
-id = isnumeric()
-id = isascii()
-id = isdigit()
-Alert('hola')
+{
+	id = lower()
+	id = random(int,2).list
+	id = random(int,2).tuple
+	id = isdecimal()
+	id = random(int,2)
+	id = list(<h1>)
+	id = <h1>(list)
+	id = ischar()
+	id = isdouble()
+	id = isString()
+	id = isBolean()
+	if list(id):
+	if tuple(id):
+	if Array(id):
+	if stack(id):
+	if true(id)
+	if false(id)
+	id.Split(id,id)
+	id.replace(id,id)
+	id = isnumeric()
+	id = isascii()
+	id = isdigit()
+	Alert('hola')
+	id = int in return
+	id = char in return
+	id = float in return
+	id = string in return
+}
